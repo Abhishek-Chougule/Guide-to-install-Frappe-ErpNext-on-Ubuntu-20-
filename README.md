@@ -349,6 +349,9 @@ bench config dns_multitenant on
 sudo pip install -U pyOpenSSL cryptography
 sudo pip install certbot
 sudo bench setup lets-encrypt erp.YOURDOMAIN.COM
+
+custom domain : ( MrAbhi )
+sudo -H bench setup lets-encrypt tranqvillas.com --custom-domain www.tranqvillas.com
 ```
 
 #### if getting error like "Some challenges have failed.", then open port 80 and 443 or try below commands
