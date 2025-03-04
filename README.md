@@ -351,7 +351,7 @@ sudo pip install certbot
 sudo bench setup lets-encrypt erp.YOURDOMAIN.COM
 
 custom domain : ( MrAbhi )
-sudo -H bench setup lets-encrypt tranqvillas.com --custom-domain www.tranqvillas.com
+sudo -H bench setup lets-encrypt mrabhi.com --custom-domain www.mrabhi.com
 ```
 
 #### if getting error like "Some challenges have failed.", then open port 80 and 443 or try below commands
