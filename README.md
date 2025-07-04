@@ -216,7 +216,7 @@ The bench is a Command-line tool to manage Frappe Deployments, this tool has var
 
 Now let us install the bench
 ```
-sudo -H pip install frappe-bench
+sudo -H pip install frappe-bench --break-system-packages
 ```
 It will install a bench and will give you a message that the bench is installed successfully, now you can use various bench commands. Starting with the command "bench".
 
