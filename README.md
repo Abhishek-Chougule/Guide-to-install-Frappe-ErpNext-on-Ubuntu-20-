@@ -350,7 +350,8 @@ sudo pip install -U pyOpenSSL cryptography
 sudo pip install certbot
 sudo bench setup lets-encrypt erp.YOURDOMAIN.COM
 
-custom domain : ( MrAbhi )
+custom domain : ( MrAbhi )  site in bench : mrabhi.com
+bench setup add-domain www.mrabhi.com --site mrabhi.com
 sudo -H bench setup lets-encrypt mrabhi.com --custom-domain www.mrabhi.com
 ```
 
