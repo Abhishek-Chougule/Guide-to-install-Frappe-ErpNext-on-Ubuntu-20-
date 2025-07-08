@@ -220,12 +220,17 @@ sudo -H pip install frappe-bench --break-system-packages
 ```
 It will install a bench and will give you a message that the bench is installed successfully, now you can use various bench commands. Starting with the command "bench".
 
+Install Ansible
+```
+sudo -H pip3 install ansible --break-system-packages
+```
+
 ### STEP 15 Install Frappe-Bench Environment using bench CLI
 Let us now create the frappe-bench environment. Here you have to decide the purpose for which you are installing ERPNext, it is just for test or training then you can use the latest version, which will be developing and may not be stable. However you can also use a stable version by choosing a specific version, You can search and learn which is the stable version today.
     
 To choose a specific stable version (for Production) you can use the branch version. I will be using branch version 14 in this installation. You can look for the latest stable release of the frappe environment.
 ```
-bench init frappe-bench --verbose --frappe-branch version-14
+bench init frappe-bench --verbose --frappe-branch version-15
 ```
 <!-- To deploy the latest (for development) frappe-bench environment make sure to run the command while you are in your home directory or your user and use the below command.
 
@@ -239,6 +244,12 @@ cd frappe-bench
 ```
 Once you type "bench" you will see the various commands that bench cli has. Don’t worry, we will not be using all the commands, we just need to install EPRNext but have a quick look at these commands.
 
+Change user directory permissions
+This will give the bench user execution permission to the home directory.
+```
+chmod -R o+rx /home/[frappe-user]
+```
+
 ### STEP 16 ERPNext Installation on Frappe Environment
 
 make sure that your working directory is frappe-bench.
@@ -251,11 +262,11 @@ Now you need to get the app from the frappe repository, have two options, either
 -->
 Frappe and ERPNext version would be same for a proper installation. We will be installing ERPNext Version 14, for that, We will be using the below command.
 ```
-bench get-app erpnext --branch version-14
+bench get-app erpnext --branch version-15
 ```
-Payments app is mandatory from ERPNext version-14.
+Payments app is mandatory from ERPNext version-15.
 ```
-bench get-app payments --branch version-14
+bench get-app payments --branch version-15
 ```
 From any of the options, it will clone the next application into the app’s directory of the frappe-bench directory. You don’t need to do anything with the directories. Just ensure that erpnext is available in the directory.
 
@@ -400,10 +411,10 @@ sudo supervisorctl reload
 ```
 #### Optional Modules (open new terminal):
 ```
-bench get-app --branch version-14 india_compliance https://github.com/resilient-tech/india-compliance
+bench get-app --branch version-15 india_compliance https://github.com/resilient-tech/india-compliance
 bench --site erp.YOURDOMAIN.COM install-app india_compliance
 
-bench get-app hrms --branch version-14
+bench get-app hrms --branch version-15
 bench --site erp.YOURDOMAIN.COM install-app hrms
 
 bench get-app chat
@@ -421,7 +432,7 @@ bench --site erp.YOURDOMAIN.COM install-app print_designer
 bench get-app builder
 bench --site erp.YOURDOMAIN.COM install-app builder
 
-bench get-app --branch version-14 it_management https://github.com/phamos-eu/it_management
+bench get-app --branch version-15 it_management https://github.com/phamos-eu/it_management
 bench --site erp.YOURDOMAIN.COM install-app it_management
 
 bench get-app raven https://github.com/The-Commit-Company/Raven
